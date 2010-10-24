@@ -1,8 +1,10 @@
-class <%= controller_class_name %>Controller < ApplicationController
+class <%= controller_class_name %>Controller < ScaffoldController
+  load_and_authorize_resource
+
   # GET /<%= table_name %>
   # GET /<%= table_name %>.xml
   def index
-    @<%= table_name %> = <%= class_name %>.find(:all)
+    @<%= table_name %> = <%= class_name %>.paginate :page => params[:page], :per_page => params[:per_page]
 
     respond_to do |format|
       format.html # index.html.erb

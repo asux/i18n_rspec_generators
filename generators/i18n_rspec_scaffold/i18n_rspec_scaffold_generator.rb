@@ -13,8 +13,6 @@ class I18nRspecScaffoldGenerator < RspecScaffoldGenerator
       m.directory(File.join('app/controllers', controller_class_path))
       m.directory(File.join('app/helpers', controller_class_path))
       m.directory(File.join('app/views', controller_class_path, controller_file_name))
-      m.directory(File.join('app/views/layouts', controller_class_path))
-      m.directory(File.join('public/stylesheets', class_path))
 
       m.directory(File.join('spec/controllers', controller_class_path))
       m.directory(File.join('spec/routing', controller_class_path))
@@ -24,15 +22,11 @@ class I18nRspecScaffoldGenerator < RspecScaffoldGenerator
       m.directory File.join('spec/views', controller_class_path, controller_file_name)
       m.directory File.join('spec/integration', class_path)
       
-      # Layout and stylesheet.
-      m.template("i18n_rspec_scaffold:layout.html.erb", File.join('app/views/layouts', controller_class_path, "#{controller_file_name}.html.erb"))
-      m.template("i18n_rspec_scaffold:style.css", 'public/stylesheets/scaffold.css')
-
       # Controller spec, class, and helper.
       m.template 'rspec_scaffold:routing_spec.rb',
         File.join('spec/routing', controller_class_path, "#{controller_file_name}_routing_spec.rb")
 
-      m.template 'rspec_scaffold:controller_spec.rb',
+      m.template 'i18n_rspec_scaffold:controller_spec.rb',
         File.join('spec/controllers', controller_class_path, "#{controller_file_name}_controller_spec.rb")
 
       m.template "i18n_rspec_scaffold:controller.rb",
@@ -59,7 +53,7 @@ class I18nRspecScaffoldGenerator < RspecScaffoldGenerator
       # View specs
       m.template "rspec_scaffold:edit_erb_spec.rb",
         File.join('spec/views', controller_class_path, controller_file_name, "edit.#{default_file_extension}_spec.rb")
-      m.template "rspec_scaffold:index_erb_spec.rb",
+      m.template "i18n_rspec_scaffold:index_erb_spec.rb",
         File.join('spec/views', controller_class_path, controller_file_name, "index.#{default_file_extension}_spec.rb")
       m.template "rspec_scaffold:new_erb_spec.rb",
         File.join('spec/views', controller_class_path, controller_file_name, "new.#{default_file_extension}_spec.rb")

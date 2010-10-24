@@ -6,5 +6,4 @@
 
 <% end -%>
 
-<%%= link_to translate(:edit, :default => 'Edit', :scope => [:railties, :scaffold]), edit_<%= singular_name %>_path(@<%= singular_name %>) %> |
-<%%= link_to translate(:back, :default => 'Back', :scope => [:railties, :scaffold]), <%= plural_name %>_path %>
+<%%= render :partial => 'shared/show_actions', :locals => {:object => @<%= singular_name %>} %>

@@ -14,4 +14,5 @@
   </p>
 <%% end %>
 
-<%%= link_to translate(:back, :default => 'Back', :scope => [:railties, :scaffold]), <%= plural_name %>_path %>
+<%%= render :partial => 'shared/new_actions', :locals => {:model => <%= class_name %>} %>
+<br><br><br>

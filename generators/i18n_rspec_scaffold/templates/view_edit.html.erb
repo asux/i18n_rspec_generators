@@ -14,5 +14,5 @@
   </p>
 <%% end %>
 
-<%%= link_to translate(:show, :default => 'Show', :scope => [:railties, :scaffold]), @<%= singular_name %> %> |
-<%%= link_to translate(:back, :default => 'Back', :scope => [:railties, :scaffold]), <%= plural_name %>_path %>
+<%%= render :partial => 'shared/edit_actions', :locals => {:object => @<%= singular_name %>} %>
+<br><br><br>
