@@ -1,0 +1,4 @@
+Description:
+    Generator cretae i18n aware scaffold with rspec (requieres rspec-rails gem).
+Options:
+    like rspec_scaffold generator

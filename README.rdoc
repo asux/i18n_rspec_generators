@@ -1,0 +1,17 @@
+= I18n Rspec generators
+
+The generator currently creates i18n aware scaffold with rspec *_spec.rb files.
+
+== Requirements
+
++rspec-rails+ gem
+
+== Usage
+<code>
+script/generate i18n_rspec_scaffold ModelName [field:type field:type]
+</code>
+Options are same rspec_scaffold generator
+
+== Copyright
+
+Copyright (c) 2010 {Alexander Ulyanitsky}[mailto:a.ulyanitsky@gmail.com], released under the MIT license
