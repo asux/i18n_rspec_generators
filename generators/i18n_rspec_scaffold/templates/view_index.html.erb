@@ -10,6 +10,7 @@
 
 <%% @<%= plural_name %>.each_with_index do |<%= singular_name %>, index| %>
   <tr>
+    <td><%%=h <%= singular_name %>.id %></td>
 <% for attribute in attributes -%>
     <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
 <% end -%>
